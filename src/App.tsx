@@ -61,12 +61,12 @@ export default function App() {
   const [hasConsent, setHasConsent] = useState(false);
 
   async function fetchPost(email){
-    const response = await fetch('https://h4sh.it/api/index.php', {
+    const response = await fetch('/api/index.php', {
            method: 'POST',
            headers: { 'Content-Type': 'application/json' },
            body: JSON.stringify({ "email": email })
          });
-         return response
+         return await response.json()
   }
 
   const handleSubscribe = async (e: React.FormEvent) => {
@@ -81,7 +81,7 @@ export default function App() {
 
         // if (!response.ok) throw new Error('Subscription failed');        
         // For demo purposes, we'll succeed
-        if (!api_res.ok){
+        if (api_res.result === 1){
           setStatus('success');
         } else {
           setStatus('error');
