@@ -4,7 +4,7 @@
 header("Access-Control-Allow-Origin: https://h4sh.it");
 
 // 2. Definisci quali metodi sono consentiti
-header("Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE");
+header("Access-Control-Allow-Methods: POST, OPTIONS");
 
 // 3. Definisci quali header può inviare il client (Content-Type è fondamentale per il JSON)
 header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
@@ -12,6 +12,13 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-W
 // 4. Gestione della richiesta "Preflight" (il browser chiede il permesso prima del POST)
 if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     http_response_code(200);
+    exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    // Se non è POST, restituisce errore 405 (Method Not Allowed)
+    http_response_code(405);
+    echo json_encode(["error" => "Metodo non consentito. Usa POST."]);
     exit;
 }
 
