@@ -60,6 +60,15 @@ export default function App() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [hasConsent, setHasConsent] = useState(false);
 
+  async function fetchPost(email){
+    const response = await fetch('https://h4sh.it/api/index.php', {
+           method: 'POST',
+           headers: { 'Content-Type': 'application/json' },
+           body: JSON.stringify({ "email": email })
+         });
+         return response
+  }
+
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email && hasConsent) {
@@ -67,22 +76,20 @@ export default function App() {
       try {
         // Simulating a POST request to /api/subscribe
         // In a real scenario, this would be:
-        // const response = await fetch('/api/subscribe', {
-        //   method: 'POST',
-        //   headers: { 'Content-Type': 'application/json' },
-        //   body: JSON.stringify({ email })
-        // });
-        // if (!response.ok) throw new Error('Subscription failed');
         
-        // Simulating network delay
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        
+        const api_res = await fetchPost(email);
+
+        // if (!response.ok) throw new Error('Subscription failed');        
         // For demo purposes, we'll succeed
-        setStatus('success');
+        if (!api_res.ok){
+          setStatus('success');
+        } else {
+          setStatus('error');
+        }
+        
 
         setEmail('');
         setHasConsent(false);
-        setTimeout(() => setStatus('idle'), 5000);
       } catch (error) {
         console.error('Subscription error:', error);
         setStatus('error');
