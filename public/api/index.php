@@ -75,6 +75,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($data['email']) && !empty($dat
     ];
 
     if ($db_result == 1) {
+
+        require_once "EmailManager.php";
+        require 'config.php';
+
+        try {
+            $mail = new SimpleSMTP($config['smtp_host'], $config['smtp_port'], $config['smtp_user'], $config['smtp_pass'], $config['smtp_timeout']);
+
+            // Impostazione mittente e destinatario
+            $mail->setFrom($config['smtp_user'], 'Lorenzo Fornara');
+            $mail->addAddress("h4shell@gmail.com");
+            // Contenuto dell'email
+            $mail->setSubject("Nuova iscrizione alla newsletter");
+
+            $htmlBody = "
+                    <html>
+                    <body style='font-family: Arial, sans-serif; line-height: 1.6; color: #ddd; background-color: #333'>
+                        <div style='background-color: #333; max-width: 600px; margin: 20px auto; border: 1px solid #333; border-radius: 8px; overflow: hidden;'>
+                            <div style='background-color: #01bd7d; color: black; padding: 20px; text-align: center;'>
+                                <h1 style='margin: 0;'>Nuova Iscrizione</h1>
+                            </div>
+                            <div style='padding: 20px;'>
+                                <p>Ciao <strong>Lorenzo</strong>,</p>
+                                <p>Hai ricevuto una nuova iscrizione alla tua newsletter.</p>
+                                <div style='background: black; padding: 15px; border-radius: 5px; margin: 20px 0;'>
+                                    <strong>Email utente:</strong> <span style='color: #01bd7d;'>{$data['email']}</span>
+                                </div>
+                                <p>Ricordati di mandare il codice sconto</p>
+                            </div>
+                            <div style='background-color: black; color: #777; padding: 10px; text-align: center; font-size: 12px;'>
+                                © " . date("Y") . " Lorenzo Fornara - Tutti i diritti riservati.
+                            </div>
+                        </div>
+                    </body>
+                    </html>
+                    ";
+
+            $mail->setBody($htmlBody, true);
+            $response = $mail->send();
+        }
+        catch (Exception $e) {
+            echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
+        }
+
+
+
         echo json_encode($result, JSON_UNESCAPED_UNICODE);
     }
     else {
