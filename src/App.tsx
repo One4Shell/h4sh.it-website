@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -130,6 +131,25 @@ export default function App() {
 
   return (
     <div ref={container} className="bg-black text-zinc-100 selection:bg-emerald-500 selection:text-black overflow-x-hidden">
+      <Helmet>
+        <title>h4sh | AI Automation & Software Development</title>
+        <meta name="description" content="Trasformiamo la complessità tecnologica in semplicità operativa. Soluzioni software intelligenti e infrastrutture digitali scalabili." />
+        <meta name="keywords" content="AI, Automation, Software Development, h4sh, Lorenzo Fornara, Digital Infrastructure, Scalable Solutions" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://h4shell.it/" />
+        <meta property="og:title" content="h4sh | AI Automation & Software Development" />
+        <meta property="og:description" content="Trasformiamo la complessità tecnologica in semplicità operativa. Soluzioni software intelligenti e infrastrutture digitali scalabili." />
+        <meta property="og:image" content="https://h4shell.it/og-image.png" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://h4shell.it/" />
+        <meta property="twitter:title" content="h4sh | AI Automation & Software Development" />
+        <meta property="twitter:description" content="Trasformiamo la complessità tecnologica in semplicità operativa. Soluzioni software intelligenti e infrastrutture digitali scalabili." />
+        <meta property="twitter:image" content="https://h4shell.it/og-image.png" />
+      </Helmet>
       <ThreeBackground />
 
       {/* Navigation */}
