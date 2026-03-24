@@ -79,6 +79,7 @@ export default function App() {
         
         // For demo purposes, we'll succeed
         setStatus('success');
+
         setEmail('');
         setHasConsent(false);
         setTimeout(() => setStatus('idle'), 5000);
@@ -135,7 +136,7 @@ export default function App() {
         <title>h4sh | AI Automation & Software Development</title>
         <meta name="description" content="Trasformiamo la complessità tecnologica in semplicità operativa. Soluzioni software intelligenti e infrastrutture digitali scalabili." />
         <meta name="keywords" content="AI, Automation, Software Development, h4sh, Lorenzo Fornara, Digital Infrastructure, Scalable Solutions" />
-        
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://h4sh.it/" />
