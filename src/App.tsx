@@ -138,17 +138,17 @@ export default function App() {
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://h4shell.it/" />
+        <meta property="og:url" content="https://h4sh.it/" />
         <meta property="og:title" content="h4sh | AI Automation & Software Development" />
         <meta property="og:description" content="Trasformiamo la complessità tecnologica in semplicità operativa. Soluzioni software intelligenti e infrastrutture digitali scalabili." />
-        <meta property="og:image" content="https://h4shell.it/og-image.png" />
+        <meta property="og:image" content="https://h4sh.it/og-image.png" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://h4shell.it/" />
+        <meta property="twitter:url" content="https://h4sh.it/" />
         <meta property="twitter:title" content="h4sh | AI Automation & Software Development" />
         <meta property="twitter:description" content="Trasformiamo la complessità tecnologica in semplicità operativa. Soluzioni software intelligenti e infrastrutture digitali scalabili." />
-        <meta property="twitter:image" content="https://h4shell.it/og-image.png" />
+        <meta property="twitter:image" content="https://h4sh.it/og-image.png" />
       </Helmet>
       <ThreeBackground />
 
@@ -537,7 +537,7 @@ export default function App() {
             <h4 className="font-bold mb-6 uppercase tracking-widest text-xs text-emerald-500">Contatti</h4>
             <ul className="space-y-4 text-zinc-400 text-sm">
               <li>Bordighera, Italia</li>
-              <li>lorenzo.fornara@h4shell.it</li>
+              <li>h4shell@gmail.it</li>
             </ul>
           </div>
           <div>
