@@ -25,6 +25,7 @@ import { ContactSection } from './components/ContactSection';
 import { Logo } from './components/Logo';
 import { AIGenerator } from './components/AIGenerator';
 import { Chatbot } from './components/Chatbot';
+import { CustomCursor } from './components/CustomCursor';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -604,6 +605,7 @@ export default function App() {
       </AnimatePresence>
 
       <Chatbot />
+      <CustomCursor />
     </div>
   );
 }

@@ -9,8 +9,14 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (min-width: 768px) {
+  * {
+    cursor: none !important;
+  }
+}
+
 body {
-  cursor: default;
+  background: #000;
 }
 
 /* Custom scrollbar */
