@@ -27,7 +27,7 @@ const WIZARD_CONFIG = {
       id: 'customer-care', 
       label: 'Customer Care', 
       icon: Headset, 
-      agentPrefix: 'Clara',
+      agentPrefix: 'CareBot',
       tasks: [
         "Risposta istantanea alle FAQ h24",
         "Smistamento ticket intelligente",
@@ -38,7 +38,7 @@ const WIZARD_CONFIG = {
       id: 'admin', 
       label: 'Amministrazione', 
       icon: FileText, 
-      agentPrefix: 'Gianpiero',
+      agentPrefix: 'AdminMind',
       tasks: [
         "Riconoscimento automatico fatture",
         "Solleciti pagamenti automatizzati",
@@ -49,7 +49,7 @@ const WIZARD_CONFIG = {
       id: 'sales', 
       label: 'Vendite', 
       icon: TrendingUp, 
-      agentPrefix: 'Luca',
+      agentPrefix: 'SalesPro',
       tasks: [
         "Qualificazione lead in tempo reale",
         "Follow-up personalizzati automatici",
@@ -60,7 +60,7 @@ const WIZARD_CONFIG = {
       id: 'back-office', 
       label: 'Back-Office', 
       icon: Layers, 
-      agentPrefix: 'Mario',
+      agentPrefix: 'FlowMaster',
       tasks: [
         "Sincronizzazione dati tra gestionali",
         "Generazione reportistica avanzata",
