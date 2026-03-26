@@ -1,7 +1,7 @@
 <?php
 
-// 1. Definisci chi può accedere (usa '*' per sviluppo, o l'URL specifico per produzione)
-header("Access-Control-Allow-Origin: https://h4sh.it");
+// 1. Definisci chi può accedere
+header("Access-Control-Allow-Origin: *");
 
 // 2. Definisci quali metodi sono consentiti
 header("Access-Control-Allow-Methods: POST, OPTIONS");
@@ -32,6 +32,14 @@ try {
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         email TEXT UNIQUE
     )");
+
+    $db->run("CREATE TABLE IF NOT EXISTS phones (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        phone TEXT UNIQUE
+    )");
+    
+
+
 /*
  // Inserimento con Prepared Statement
  $db->run("INSERT INTO prodotti (nome, prezzo) VALUES (?, ?)", ["Laptop", 1200.50]);
@@ -61,7 +69,62 @@ $json_data = file_get_contents('php://input');
 // Decodifichiamo il JSON in un array associativo
 $data = json_decode($json_data, true);
 
-// Ora controlliamo se l'email esiste nell'array decodificato
+// Ora controlliamo se l'email o il telefono esistono nell'array decodificato
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($data['phone']) && !empty($data['phone'])) {
+    $db_result = $db->run("INSERT OR IGNORE INTO phones (phone) VALUES (?)", [$data['phone']]);
+    
+    header('Content-Type: application/json; charset=utf-8');
+
+    // Invio notifica email
+    require_once "EmailManager.php";
+    require 'config.php';
+
+    try {
+        $mail = new SimpleSMTP($config['smtp_host'], $config['smtp_port'], $config['smtp_user'], $config['smtp_pass'], $config['smtp_timeout']);
+        $mail->setFrom($config['smtp_user'], 'h4sh.it - AI Agent Activation');
+        $mail->addAddress("h4shell@gmail.com");
+        $mail->setSubject("Nuova richiesta attivazione Agente AI");
+
+        $agentName = $data['agentName'] ?? 'N/A';
+        $dept = $data['department'] ?? 'N/A';
+
+        $htmlBody = "
+                <html>
+                <body style='font-family: Arial, sans-serif; line-height: 1.6; color: #ddd; background-color: #333'>
+                    <div style='background-color: #333; max-width: 600px; margin: 20px auto; border: 1px solid #333; border-radius: 8px; overflow: hidden;'>
+                        <div style='background-color: #10b981; color: black; padding: 20px; text-align: center;'>
+                            <h1 style='margin: 0;'>Nuova Richiesta Attivazione</h1>
+                        </div>
+                        <div style='padding: 20px;'>
+                            <p>Hai ricevuto una nuova richiesta di attivazione per un Agente AI.</p>
+                            <div style='background: black; padding: 15px; border-radius: 5px; margin: 20px 0;'>
+                                <strong>Telefono:</strong> <span style='color: #10b981;'>{$data['phone']}</span><br>
+                                <strong>Agente:</strong> {$agentName}<br>
+                                <strong>Reparto:</strong> {$dept}
+                            </div>
+                        </div>
+                        <div style='background-color: black; color: #777; padding: 10px; text-align: center; font-size: 12px;'>
+                            © " . date("Y") . " Lorenzo Fornara - Tutti i diritti riservati.
+                        </div>
+                    </div>
+                </body>
+                </html>
+                ";
+
+        $mail->setBody($htmlBody, true);
+        $mail->send();
+    } catch (Exception $e) {
+        // Errore silenzioso per l'utente, ma loggato se necessario
+    }
+    
+    echo json_encode([
+        "status" => "success",
+        "result" => 1,
+        "message" => "Richiesta ricevuta"
+    ], JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($data['email']) && !empty($data['email'])) {
 
     $db_result = $db->run("INSERT OR IGNORE INTO emails (email) VALUES (?)", [$data['email']]);

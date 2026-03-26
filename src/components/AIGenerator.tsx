@@ -160,7 +160,7 @@ export const AIGenerator: React.FC = () => {
     if (!phone) return;
     setActivationStatus('loading');
     try {
-      const response = await fetch('/api/activate.php', {
+      const response = await fetch('/api/index.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -175,7 +175,7 @@ export const AIGenerator: React.FC = () => {
       
       // Simulating success for demo if API doesn't exist yet
       // In production, we'd check response.ok and data.result
-      const data = await response.json().catch(() => ({ result: 1 }));
+      const data = await response.json()
       
       if (data.result === 1) {
         setActivationStatus('success');
@@ -185,7 +185,7 @@ export const AIGenerator: React.FC = () => {
     } catch (error) {
       console.error('Activation error:', error);
       // For demo, let's assume success if we can't reach the API
-      setActivationStatus('success');
+      // setActivationStatus('success');
     }
   };
 
