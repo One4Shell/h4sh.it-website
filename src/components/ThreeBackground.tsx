@@ -120,7 +120,7 @@ export const ThreeBackground = () => {
     <>
       <div className="glow-mesh" />
       <div className="noise-overlay" />
-      <div ref={containerRef} className="fixed inset-x-0 top-0 bottom-[-400px] -z-10 bg-black" id="three-bg" />
+      <div ref={containerRef} className="fixed inset-x-0 top-0 bottom-[-400px] -z-20" id="three-bg" />
     </>
   );
 };

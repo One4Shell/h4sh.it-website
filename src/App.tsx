@@ -26,11 +26,12 @@ import { Logo } from './components/Logo';
 import { AIGenerator } from './components/AIGenerator';
 import { Chatbot } from './components/Chatbot';
 import { CustomCursor } from './components/CustomCursor';
+import { HeroVideoBackground } from './components/HeroVideoBackground';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Section = ({ children, className = "", id = "" }: { children: React.ReactNode, className?: string, id?: string }) => (
-  <section id={id} className={`min-h-screen flex flex-col justify-center px-6 py-24 md:px-24 lg:px-48 ${className}`}>
+  <section id={id} className={`min-h-screen relative flex flex-col justify-center px-6 py-24 md:px-24 lg:px-48 ${className}`}>
     {children}
   </section>
 );
@@ -279,28 +280,31 @@ export default function App() {
 
       {/* Hero Section */}
       <Section className="hero-content">
-        <motion.div 
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-8"
-        >
-          <Zap className="w-3 h-3 fill-current" />
-          AI Automation & Software Development
-        </motion.div>
-        <h1 className="text-4xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-8 leading-[0.9] text-gradient">
-          Trasformiamo la <span className="text-emerald-500">complessità</span> in semplicità.
-        </h1>
-        <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl mb-12 leading-relaxed">
-          Benvenuti nel profilo ufficiale di h4sh, la realtà innovativa fondata da Lorenzo Fornara dedicata alla progettazione di soluzioni software intelligenti.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-6">
-          <button 
-            onClick={() => setView('generator')}
-            className="px-8 py-4 bg-emerald-500 text-black font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-emerald-400 transition-all group shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+        <HeroVideoBackground />
+        <div className="relative z-10">
+          <motion.div 
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-8"
           >
-            Configura il tuo Agente <Zap className="w-5 h-5 fill-current" />
-          </button>
-          <a href="#contatti-booking" className="px-8 py-4 bg-white/5 border border-white/10 font-bold rounded-xl hover:bg-white/10 transition-all flex items-center justify-center gap-2">
-            Inizia il Progetto <ArrowRight className="w-5 h-5" />
-          </a>
+            <Zap className="w-3 h-3 fill-current" />
+            AI Automation & Software Development
+          </motion.div>
+          <h1 className="text-4xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-8 leading-[0.9] text-gradient">
+            Soluzioni <span className="text-emerald-500">AI</span> semplici.
+          </h1>
+          <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl mb-12 leading-relaxed">
+            Benvenuti nel profilo ufficiale di h4sh, la realtà innovativa fondata da Lorenzo Fornara dedicata alla progettazione di soluzioni software intelligenti.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6">
+            <button 
+              onClick={() => setView('generator')}
+              className="px-8 py-4 bg-emerald-500 text-black font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-emerald-400 transition-all group shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+            >
+              Configura il tuo Agente <Zap className="w-5 h-5 fill-current" />
+            </button>
+            <a href="#contatti-booking" className="px-8 py-4 bg-white/5 border border-white/10 font-bold rounded-xl hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+              Inizia il Progetto <ArrowRight className="w-5 h-5" />
+            </a>
+          </div>
         </div>
       </Section>
 
