@@ -9,7 +9,7 @@ export const CustomCursor: React.FC = () => {
   const mouseY = useMotionValue(0);
 
   // Spring configuration for the "delay" / smooth following effect
-  const springConfig = { damping: 25, stiffness: 150 };
+  const springConfig = { damping: 30, stiffness: 400 };
   const cursorX = useSpring(mouseX, springConfig);
   const cursorY = useSpring(mouseY, springConfig);
 

@@ -10,7 +10,7 @@ export const ContactSection: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full h-[600px] md:h-[1500px] rounded-3xl overflow-hidden border border-white/10 bg-zinc-900/50 backdrop-blur-sm">
+    <div className="w-full h-[600px] md:h-[1500px] rounded-[2.5rem] overflow-hidden glass-card">
       <Cal
         namespace="15min"
         calLink="lorenzo-fornara-kptoob/15min"

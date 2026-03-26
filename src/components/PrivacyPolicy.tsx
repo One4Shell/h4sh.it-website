@@ -26,7 +26,7 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ isOpen, onClose })
         initial={{ scale: 0.9, opacity: 0, y: 20 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.9, opacity: 0, y: 20 }}
-        className="relative w-full max-w-4xl max-h-[90vh] bg-zinc-950 border border-white/10 rounded-3xl overflow-hidden flex flex-col shadow-2xl"
+        className="relative w-full max-w-4xl max-h-[90vh] glass-card rounded-[2.5rem] overflow-hidden flex flex-col shadow-2xl"
       >
         {/* Header */}
         <div className="px-8 py-6 border-b border-white/5 flex justify-between items-center bg-zinc-950/50 backdrop-blur-md sticky top-0 z-10">

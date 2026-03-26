@@ -224,7 +224,7 @@ export const AIGenerator: React.FC = () => {
               className="space-y-8"
             >
               <div className="text-center space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight">In quale reparto c'è più <span className="text-emerald-500 italic">caos</span>?</h2>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">In quale reparto c'è più <span className="text-emerald-500 italic">caos</span>?</h2>
                 <p className="text-zinc-400 text-lg">Seleziona l'area operativa che necessita di un'iniezione di intelligenza.</p>
               </div>
 
@@ -234,13 +234,13 @@ export const AIGenerator: React.FC = () => {
                   return (
                     <motion.button
                       key={dept.id}
-                      whileHover={{ scale: 1.02, boxShadow: '0 0 20px rgba(16, 185, 129, 0.2)' }}
+                      whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={() => setSelectedDept(dept.id)}
-                      className={`p-8 rounded-3xl border text-left transition-all relative overflow-hidden group ${
+                      className={`p-8 rounded-[2rem] border text-left transition-all relative overflow-hidden group glass-card ${
                         selectedDept === dept.id 
                           ? 'border-emerald-500 bg-emerald-500/10' 
-                          : 'border-white/10 bg-zinc-900/50 hover:border-emerald-500/50'
+                          : 'hover:border-emerald-500/50'
                       }`}
                     >
                       <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 transition-colors ${
@@ -284,7 +284,7 @@ export const AIGenerator: React.FC = () => {
               className="space-y-12"
             >
               <div className="text-center space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Il <span className="text-emerald-500 italic">Ladro</span> di Tempo</h2>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">Il <span className="text-emerald-500 italic">Ladro</span> di Tempo</h2>
                 <p className="text-zinc-400 text-lg">Identifichiamo quanto valore stiamo lasciando sul tavolo.</p>
               </div>
 
@@ -340,7 +340,7 @@ export const AIGenerator: React.FC = () => {
               className="space-y-12"
             >
               <div className="text-center space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Personalità dell'<span className="text-emerald-500 italic">Agente</span></h2>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">Personalità dell'<span className="text-emerald-500 italic">Agente</span></h2>
                 <p className="text-zinc-400 text-lg">Definisci come l'AI interagirà con il tuo ecosistema.</p>
               </div>
 
@@ -440,7 +440,7 @@ export const AIGenerator: React.FC = () => {
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-xs font-bold uppercase tracking-widest mb-4">
                   <Sparkles size={14} /> Agente Generato con Successo
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Ecco il tuo nuovo <span className="text-emerald-500">Collaboratore</span></h2>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">Ecco il tuo nuovo <span className="text-emerald-500">Collaboratore</span></h2>
               </div>
 
               {/* ID Card Dashboard */}

@@ -36,11 +36,11 @@ const Section = ({ children, className = "", id = "" }: { children: React.ReactN
 );
 
 const Card = ({ title, description, icon: Icon, items }: { title: string, description: string, icon: any, items?: string[] }) => (
-  <div className="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-all duration-500 backdrop-blur-sm">
-    <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+  <div className="group p-8 rounded-3xl glass-card">
+    <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
       <Icon className="w-6 h-6 text-emerald-400" />
     </div>
-    <h3 className="text-2xl font-semibold mb-4 text-white">{title}</h3>
+    <h3 className="text-2xl font-bold mb-4 text-white">{title}</h3>
     <p className="text-zinc-400 mb-6 leading-relaxed">{description}</p>
     {items && (
       <ul className="space-y-3">
@@ -285,7 +285,7 @@ export default function App() {
           <Zap className="w-3 h-3 fill-current" />
           AI Automation & Software Development
         </motion.div>
-        <h1 className="text-4xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-8 leading-[0.9]">
+        <h1 className="text-4xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-8 leading-[0.9] text-gradient">
           Trasformiamo la <span className="text-emerald-500">complessità</span> in semplicità.
         </h1>
         <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl mb-12 leading-relaxed">
@@ -311,7 +311,7 @@ export default function App() {
             <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-6">
               <Eye className="w-6 h-6 text-emerald-400" />
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">Visione Democratica.</h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight text-gradient">Visione Democratica.</h2>
             <p className="text-xl text-zinc-400 leading-relaxed mb-8">
               In h4sh, crediamo che l'Intelligenza Artificiale non debba essere un privilegio per pochi colossi tecnologici, ma uno strumento democratico e tangibile per ogni realtà imprenditoriale.
             </p>

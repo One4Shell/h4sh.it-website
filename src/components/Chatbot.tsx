@@ -108,17 +108,15 @@ export const Chatbot: React.FC = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 100, scale: 0.8 }}
+            initial={{ opacity: 0, y: '100%' }}
             animate={{ 
               opacity: 1, 
-              y: 0, 
-              scale: 1,
-              height: isMinimized ? 'auto' : '500px',
-              width: '100%',
-              maxWidth: '400px'
+              y: 0,
+              height: isMinimized ? 'auto' : (window.innerWidth < 768 ? '100dvh' : '600px'),
             }}
-            exit={{ opacity: 0, y: 100, scale: 0.8 }}
-            className={`fixed bottom-0 right-0 md:bottom-6 md:right-6 z-[101] flex flex-col bg-zinc-900 border border-white/10 md:rounded-3xl shadow-2xl overflow-hidden backdrop-blur-xl ${isMinimized ? 'h-auto' : 'h-[100dvh] md:h-[600px]'}`}
+            exit={{ opacity: 0, y: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className={`fixed bottom-0 right-0 md:bottom-6 md:right-6 z-[101] flex flex-col glass-card md:rounded-[2rem] shadow-2xl overflow-hidden w-full md:max-w-[400px] ${isMinimized ? 'h-auto' : 'h-[100dvh] md:h-[600px]'}`}
           >
             {/* Header */}
             <div className="p-4 bg-emerald-500 text-black flex items-center justify-between">
