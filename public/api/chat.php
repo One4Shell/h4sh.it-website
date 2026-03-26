@@ -23,7 +23,16 @@ if (!$data || !isset($data['message'])) {
     exit;
 }
 
-$userMessage = strtolower($data['message']);
+$msg = strtolower($data['message']);
+
+function contains($str, array $keywords) {
+    foreach ($keywords as $keyword) {
+        if (stripos($str, $keyword) !== false) {
+            return true;
+        }
+    }
+    return false;
+}
 $reply = "";
 
 // ── SALUTI ───────────────────────────────────────────────────
