@@ -24,6 +24,7 @@ import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { ContactSection } from './components/ContactSection';
 import { Logo } from './components/Logo';
 import { AIGenerator } from './components/AIGenerator';
+import { Chatbot } from './components/Chatbot';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -601,6 +602,8 @@ export default function App() {
           onClose={() => setIsPrivacyOpen(false)} 
         />
       </AnimatePresence>
+
+      <Chatbot />
     </div>
   );
 }
