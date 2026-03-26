@@ -23,6 +23,7 @@ import { ThreeBackground } from './components/ThreeBackground';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { ContactSection } from './components/ContactSection';
 import { Logo } from './components/Logo';
+import { AIGenerator } from './components/AIGenerator';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -54,6 +55,7 @@ const Card = ({ title, description, icon: Icon, items }: { title: string, descri
 
 export default function App() {
   const container = useRef<HTMLDivElement>(null);
+  const [view, setView] = useState<'landing' | 'generator'>('landing');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
   const [email, setEmail] = useState('');
@@ -158,7 +160,26 @@ export default function App() {
         <meta property="twitter:description" content="Trasformiamo la complessità tecnologica in semplicità operativa. Soluzioni software intelligenti e infrastrutture digitali scalabili." />
         <meta property="twitter:image" content="https://h4sh.it/og-image.png" />
       </Helmet>
-      <ThreeBackground />
+
+      {view === 'generator' ? (
+        <div className="relative">
+          <nav className="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-center backdrop-blur-md border-b border-white/5">
+            <div className="flex items-center gap-2">
+              <Logo className="w-8 h-8 text-emerald-500" />
+              <span className="font-bold text-xl tracking-tighter uppercase">h4sh</span>
+            </div>
+            <button 
+              onClick={() => setView('landing')}
+              className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-sm font-medium flex items-center gap-2"
+            >
+              <X size={16} /> Chiudi Generatore
+            </button>
+          </nav>
+          <AIGenerator />
+        </div>
+      ) : (
+        <>
+          <ThreeBackground />
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-center backdrop-blur-md border-b border-white/5">
@@ -269,11 +290,14 @@ export default function App() {
           Benvenuti nel profilo ufficiale di h4sh, la realtà innovativa fondata da Lorenzo Fornara dedicata alla progettazione di soluzioni software intelligenti.
         </p>
         <div className="flex flex-col sm:flex-row gap-6">
-          <a href="#contatti-booking" className="px-8 py-4 bg-emerald-500 text-black font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-emerald-400 transition-all group">
-            Inizia il Progetto <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
-          <a href="#servizi" className="px-8 py-4 bg-white/5 border border-white/10 font-bold rounded-xl hover:bg-white/10 transition-all">
-            Scopri di più
+          <button 
+            onClick={() => setView('generator')}
+            className="px-8 py-4 bg-emerald-500 text-black font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-emerald-400 transition-all group shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+          >
+            Configura il tuo Agente <Zap className="w-5 h-5 fill-current" />
+          </button>
+          <a href="#contatti-booking" className="px-8 py-4 bg-white/5 border border-white/10 font-bold rounded-xl hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+            Inizia il Progetto <ArrowRight className="w-5 h-5" />
           </a>
         </div>
       </Section>
@@ -567,6 +591,9 @@ export default function App() {
           <span className="flex items-center gap-2">Made with <Zap className="w-3 h-3 text-emerald-500 fill-current" /> in Bordighera</span>
         </div>
       </footer>
+
+      </>
+      )}
 
       <AnimatePresence>
         <PrivacyPolicy 
