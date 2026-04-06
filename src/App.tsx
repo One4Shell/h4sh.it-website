@@ -19,7 +19,6 @@ import {
   X
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ThreeBackground } from './components/ThreeBackground';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { ContactSection } from './components/ContactSection';
 import { Logo } from './components/Logo';
@@ -130,18 +129,6 @@ export default function App() {
         ease: "power3.out"
       });
     });
-
-    // Parallax effect for Three.js background
-    gsap.to("#three-bg", {
-      scrollTrigger: {
-        trigger: "body",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 1
-      },
-      y: -250,
-      ease: "none"
-    });
   }, { scope: container });
 
   return (
@@ -200,7 +187,6 @@ export default function App() {
         </div>
       ) : (
         <>
-          <ThreeBackground />
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-center backdrop-blur-md border-b border-white/5">
