@@ -9,6 +9,7 @@ export const HeroVideoBackground: React.FC = () => {
           className="w-full h-full"
           src="https://www.youtube-nocookie.com/embed/hOgVAYpHPCc?autoplay=1&mute=1&loop=1&playlist=hOgVAYpHPCc&controls=0&showinfo=0&autohide=1&modestbranding=1&rel=0&disablekb=1&fs=0&playsinline=1&iv_load_policy=3&enablejsapi=1"
           frameBorder="0"
+          title="h4sh Hero Background Video"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         />
       </div>

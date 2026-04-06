@@ -134,16 +134,26 @@ export default function App() {
   return (
     <div ref={container} className="bg-black text-zinc-100 selection:bg-emerald-500 selection:text-black overflow-x-hidden">
       <Helmet>
-        <title>h4sh | Il tuo studio, in perfetto ordine</title>
-        <meta name="description" content="h4sh si integra nel tuo flusso di lavoro esistente. Inizia a risparmiare tempo dal primo giorno, senza imparare nulla." />
-        <meta name="keywords" content="h4sh, Lorenzo Fornara, efficienza studio professionale, automazione documenti, tranquillità professionale, AI per avvocati, automazione per commercialisti, protocolli di ordine invisibile, ottimizzazione processi professionali" />
+        <title>
+          {view === 'generator' ? 'Generatore di Protocolli AI | h4sh' : 
+           view === 'casestudies' ? 'Casi Studio e Risultati | h4sh' : 
+           'h4sh | Il tuo studio, in perfetto ordine'}
+        </title>
+        <meta name="description" content="h4sh si integra nel tuo flusso di lavoro esistente. Inizia a risparmiare tempo dal primo giorno, senza imparare nulla. Automazione AI per studi professionali." />
+        <meta name="keywords" content="h4sh, Lorenzo Fornara, efficienza studio professionale, automazione documenti, tranquillità professionale, AI per avvocati, automazione per commercialisti, protocolli di ordine invisibile, ottimizzazione processi professionali, intelligenza artificiale studi legali, risparmio tempo professionisti" />
+        <meta name="author" content="h4sh" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={`https://h4sh.it/${view !== 'landing' ? view : ''}`} />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://h4sh.it/" />
+        <meta property="og:site_name" content="h4sh" />
         <meta property="og:title" content="h4sh | Il tuo studio, in perfetto ordine" />
-        <meta property="og:description" content="Recupera 15 ore al mese. h4sh mette in ordine il tuo studio senza che tu debba toccare un tasto nuovo." />
+        <meta property="og:description" content="Recupera 15 ore al mese. h4sh mette in ordine il tuo studio senza che tu debba toccare un tasto nuovo. Automazione invisibile per professionisti." />
         <meta property="og:image" content="https://h4sh.it/og-image.png" />
+        <meta property="og:locale" content="it_IT" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
@@ -151,6 +161,27 @@ export default function App() {
         <meta property="twitter:title" content="h4sh | AI Automation & Software Development" />
         <meta property="twitter:description" content="Trasformiamo la complessità tecnologica in semplicità operativa. Soluzioni software intelligenti e infrastrutture digitali scalabili." />
         <meta property="twitter:image" content="https://h4sh.it/og-image.png" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "h4sh",
+            "url": "https://h4sh.it/",
+            "logo": "https://h4sh.it/logo.svg",
+            "description": "h4sh automatizza i flussi di lavoro burocratici per studi professionali utilizzando l'intelligenza artificiale.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "IT"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "email": "info@h4sh.it"
+            }
+          })}
+        </script>
       </Helmet>
 
       {view === 'generator' ? (
