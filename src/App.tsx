@@ -237,7 +237,6 @@ export default function App() {
             Casi Studio
           </button>
           <a href="#faq" className="hover:text-emerald-400 transition-colors">FAQ</a>
-          <a href="#pmi" className="hover:text-emerald-400 transition-colors">Settori</a>
           <a href="#contatti-booking" className="px-5 py-2 bg-emerald-500 text-black rounded-full hover:bg-emerald-400 transition-colors">Contattaci</a>
         </div>
 
@@ -373,7 +372,7 @@ export default function App() {
             <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-6">
               <Eye className="w-6 h-6 text-emerald-400" />
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight text-gradient">L'utomazione per Chi Non Vuole Complicazioni.</h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight text-gradient">L'automazione per il tuo business.</h2>
             <p className="text-xl text-zinc-400 leading-relaxed mb-8">
               Niente da installare, niente da imparare. Grazie alle nostre soluzioni ti occuperai solo della tua professione, lasciando a noi lo stress.
             </p>
