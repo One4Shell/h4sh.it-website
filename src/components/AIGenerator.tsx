@@ -25,46 +25,46 @@ const WIZARD_CONFIG = {
   departments: [
     { 
       id: 'customer-care', 
-      label: 'Customer Care', 
+      label: 'Gestione Clienti', 
       icon: Headset, 
-      agentPrefix: 'CareBot',
+      agentPrefix: 'Protocollo Care',
       tasks: [
-        "Risposta istantanea alle FAQ h24",
-        "Smistamento ticket intelligente",
-        "Analisi del sentiment dei clienti"
+        "Risposta istantanea alle richieste comuni",
+        "Smistamento pratiche in base all'urgenza",
+        "Monitoraggio della soddisfazione dei clienti"
       ]
     },
     { 
       id: 'admin', 
-      label: 'Amministrazione', 
+      label: 'Amministrazione & Fatture', 
       icon: FileText, 
-      agentPrefix: 'AdminMind',
+      agentPrefix: 'Protocollo Admin',
       tasks: [
-        "Riconoscimento automatico fatture",
-        "Solleciti pagamenti automatizzati",
-        "Riconciliazione bancaria assistita"
+        "Estrazione dati automatica dalle fatture",
+        "Gestione solleciti senza stress",
+        "Riconciliazione dei conti assistita"
       ]
     },
     { 
       id: 'sales', 
-      label: 'Vendite', 
+      label: 'Sviluppo Studio', 
       icon: TrendingUp, 
-      agentPrefix: 'SalesPro',
+      agentPrefix: 'Protocollo Growth',
       tasks: [
-        "Qualificazione lead in tempo reale",
-        "Follow-up personalizzati automatici",
-        "Analisi predittiva delle conversioni"
+        "Qualificazione dei nuovi contatti",
+        "Follow-up educati e puntuali",
+        "Analisi delle opportunità di consulenza"
       ]
     },
     { 
       id: 'back-office', 
-      label: 'Back-Office', 
+      label: 'Archivio & Documenti', 
       icon: Layers, 
-      agentPrefix: 'FlowMaster',
+      agentPrefix: 'Protocollo Archive',
       tasks: [
-        "Sincronizzazione dati tra gestionali",
-        "Generazione reportistica avanzata",
-        "Automazione flussi di approvazione"
+        "Sincronizzazione dei dati tra i tuoi file",
+        "Generazione di riepiloghi per lo studio",
+        "Messa in ordine dei flussi di lavoro"
       ]
     }
   ],
@@ -80,7 +80,7 @@ const WIZARD_CONFIG = {
     },
     { 
       id: 'cost', 
-      label: 'Qual è l\'impatto maggiore di un errore umano?', 
+      label: 'Qual è l\'impatto maggiore di un errore manuale?', 
       options: [
         { value: 'economico', label: 'Danno Economico' },
         { value: 'stress', label: 'Stress del Team' }
@@ -88,19 +88,19 @@ const WIZARD_CONFIG = {
     },
     { 
       id: 'weekend', 
-      label: 'Hai bisogno di copertura durante il weekend?', 
+      label: 'Hai bisogno di copertura anche fuori orario?', 
       options: [
-        { value: 'no', label: 'No, solo feriali' },
+        { value: 'no', label: 'No, solo ufficio' },
         { value: 'yes', label: 'Sì, h24 / 7 su 7' }
       ] 
     }
   ],
   processingTexts: [
-    "Analizzando flussi operativi...",
-    "Mappando i colli di bottiglia...",
-    "Generando DNA digitale dell'agente...",
-    "Ottimizzando algoritmi di risposta...",
-    "Configurando personalità AI...",
+    "Mappando i flussi dello studio...",
+    "Identificando i colli di bottiglia...",
+    "Configurando l'assistente invisibile...",
+    "Ottimizzando i protocolli di risposta...",
+    "Mettendo in ordine i dati...",
     "Quasi pronto..."
   ]
 };
@@ -197,8 +197,8 @@ export const AIGenerator: React.FC = () => {
         {step !== 'loading' && step !== 'result' && (
           <div className="mb-12">
             <div className="flex justify-between mb-4 text-xs uppercase tracking-widest text-zinc-500">
-              <span>Configurazione Agente</span>
-              <span>Step {step === 'dept' ? '1' : step === 'thief' ? '2' : '3'} di 3</span>
+              <span>Configurazione Protocollo</span>
+              <span>Fase {step === 'dept' ? '1' : step === 'thief' ? '2' : '3'} di 3</span>
             </div>
             <div className="h-1 w-full bg-zinc-900 rounded-full overflow-hidden">
               <motion.div 
@@ -224,8 +224,8 @@ export const AIGenerator: React.FC = () => {
               className="space-y-8"
             >
               <div className="text-center space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">In quale reparto c'è più <span className="text-emerald-500 italic">caos</span>?</h2>
-                <p className="text-zinc-400 text-lg">Seleziona l'area operativa che necessita di un'iniezione di intelligenza.</p>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">In quale area dello studio c'è più <span className="text-emerald-500 italic">caos</span>?</h2>
+                <p className="text-zinc-400 text-lg">Seleziona l'area operativa che necessita di essere messa in ordine.</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -284,8 +284,8 @@ export const AIGenerator: React.FC = () => {
               className="space-y-12"
             >
               <div className="text-center space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">Il <span className="text-emerald-500 italic">Ladro</span> di Tempo</h2>
-                <p className="text-zinc-400 text-lg">Identifichiamo quanto valore stiamo lasciando sul tavolo.</p>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">Analisi del <span className="text-emerald-500 italic">Tempo</span> Perso</h2>
+                <p className="text-zinc-400 text-lg">Identifichiamo quanto valore stiamo lasciando sul tavolo a causa della burocrazia.</p>
               </div>
 
               <div className="space-y-10 max-w-2xl mx-auto">
@@ -340,8 +340,8 @@ export const AIGenerator: React.FC = () => {
               className="space-y-12"
             >
               <div className="text-center space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">Personalità dell'<span className="text-emerald-500 italic">Agente</span></h2>
-                <p className="text-zinc-400 text-lg">Definisci come l'AI interagirà con il tuo ecosistema.</p>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">Stile del <span className="text-emerald-500 italic">Protocollo</span></h2>
+                <p className="text-zinc-400 text-lg">Definisci come il sistema h4sh interagirà con il tuo studio.</p>
               </div>
 
               <div className="space-y-16 max-w-xl mx-auto py-8">
@@ -423,7 +423,7 @@ export const AIGenerator: React.FC = () => {
                     {WIZARD_CONFIG.processingTexts[loadingTextIndex]}
                   </motion.p>
                 </AnimatePresence>
-                <p className="text-zinc-500 text-sm">Stiamo assemblando il tuo collaboratore digitale...</p>
+                <p className="text-zinc-500 text-sm">Stiamo assemblando il tuo assistente invisibile...</p>
               </div>
             </motion.div>
           )}
@@ -438,9 +438,9 @@ export const AIGenerator: React.FC = () => {
             >
               <div className="text-center space-y-4">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-xs font-bold uppercase tracking-widest mb-4">
-                  <Sparkles size={14} /> Agente Generato con Successo
+                  <Sparkles size={14} /> Protocollo Configurato
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">Ecco il tuo nuovo <span className="text-emerald-500">Collaboratore</span></h2>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">Ecco il tuo <span className="text-emerald-500">Protocollo h4sh</span></h2>
               </div>
 
               {/* ID Card Dashboard */}
@@ -510,8 +510,8 @@ export const AIGenerator: React.FC = () => {
                 {/* Footer CTA */}
                 <div className="p-8 bg-emerald-500 flex flex-col md:flex-row justify-between items-center gap-6">
                   <div className="text-black max-w-md">
-                    <div className="font-bold text-xl">Pronto per l'integrazione?</div>
-                    <p className="text-sm opacity-80 mb-4">Il tuo agente è configurato e pronto per essere addestrato sui tuoi dati.</p>
+                    <div className="font-bold text-xl">Pronto per la messa in ordine?</div>
+                    <p className="text-sm opacity-80 mb-4">Il tuo protocollo è configurato e pronto per essere attivato dietro le quinte.</p>
                     
                     {activationStatus !== 'success' && (
                       <div className="relative">
@@ -530,8 +530,8 @@ export const AIGenerator: React.FC = () => {
                   {activationStatus === 'success' ? (
                     <div className="flex flex-col items-center gap-2 bg-black text-white px-8 py-5 rounded-2xl animate-in zoom-in duration-300">
                       <CheckCircle2 className="text-emerald-500" size={24} />
-                      <span className="font-bold">Richiesta Inviata!</span>
-                      <span className="text-xs opacity-60">Ti contatteremo a breve.</span>
+                      <span className="font-bold">Richiesta Ricevuta!</span>
+                      <span className="text-xs opacity-60">Ti contatteremo per la messa in ordine.</span>
                     </div>
                   ) : (
                     <button 

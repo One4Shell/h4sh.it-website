@@ -10,11 +10,11 @@ export const ContactSection: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full h-[600px] md:h-[1500px] rounded-[2.5rem] overflow-hidden glass-card">
+    <div className="w-full h-[600px] md:h-[900px] rounded-[2.5rem] overflow-hidden glass-card">
       <Cal
         namespace="15min"
         calLink="lorenzo-fornara-kptoob/15min"
-        style={{ width: "100%", height: "100%", overflow: "scroll" }}
+        style={{ width: "auto", height: "100%", overflow: "scroll" }}
         config={{ layout: "week_view", useSlotsViewOnSmallScreen: false }}
       />
     </div>

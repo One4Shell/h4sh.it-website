@@ -24,6 +24,7 @@ import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { ContactSection } from './components/ContactSection';
 import { Logo } from './components/Logo';
 import { AIGenerator } from './components/AIGenerator';
+import { CaseStudies } from './components/CaseStudies';
 import { Chatbot } from './components/Chatbot';
 import { CustomCursor } from './components/CustomCursor';
 import { HeroVideoBackground } from './components/HeroVideoBackground';
@@ -58,7 +59,7 @@ const Card = ({ title, description, icon: Icon, items }: { title: string, descri
 
 export default function App() {
   const container = useRef<HTMLDivElement>(null);
-  const [view, setView] = useState<'landing' | 'generator'>('landing');
+  const [view, setView] = useState<'landing' | 'generator' | 'casestudies'>('landing');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
   const [email, setEmail] = useState('');
@@ -145,15 +146,15 @@ export default function App() {
   return (
     <div ref={container} className="bg-black text-zinc-100 selection:bg-emerald-500 selection:text-black overflow-x-hidden">
       <Helmet>
-        <title>h4sh | AI Automation & Software Development</title>
-        <meta name="description" content="Trasformiamo la complessità tecnologica in semplicità operativa. Soluzioni software intelligenti e infrastrutture digitali scalabili." />
-        <meta name="keywords" content="AI, Automation, Software Development, h4sh, Lorenzo Fornara, Digital Infrastructure, Scalable Solutions" />
+        <title>h4sh | Il tuo studio, in perfetto ordine</title>
+        <meta name="description" content="h4sh è l'unico partner che non ti chiede di imparare un nuovo programma, ma che entra inosservato nel tuo studio per farti trovare il lavoro già fatto al posto tuo." />
+        <meta name="keywords" content="h4sh, Lorenzo Fornara, efficienza studio professionale, automazione documenti, tranquillità professionale" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://h4sh.it/" />
-        <meta property="og:title" content="h4sh | AI Automation & Software Development" />
-        <meta property="og:description" content="Trasformiamo la complessità tecnologica in semplicità operativa. Soluzioni software intelligenti e infrastrutture digitali scalabili." />
+        <meta property="og:title" content="h4sh | Il tuo studio, in perfetto ordine" />
+        <meta property="og:description" content="Recupera 15 ore al mese. h4sh mette in ordine il tuo studio senza che tu debba toccare un tasto nuovo." />
         <meta property="og:image" content="https://h4sh.it/og-image.png" />
 
         {/* Twitter */}
@@ -180,6 +181,22 @@ export default function App() {
           </nav>
           <AIGenerator />
         </div>
+      ) : view === 'casestudies' ? (
+        <div className="relative">
+          <nav className="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-center backdrop-blur-md border-b border-white/5">
+            <div className="flex items-center gap-2">
+              <Logo className="w-8 h-8 text-emerald-500" />
+              <span className="font-bold text-xl tracking-tighter uppercase">h4sh</span>
+            </div>
+            <button 
+              onClick={() => setView('landing')}
+              className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-sm font-medium flex items-center gap-2"
+            >
+              <X size={16} /> Chiudi Casi Studio
+            </button>
+          </nav>
+          <CaseStudies onBack={() => setView('landing')} />
+        </div>
       ) : (
         <>
           <ThreeBackground />
@@ -195,6 +212,12 @@ export default function App() {
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400 uppercase tracking-widest">
           <a href="#vision" className="hover:text-emerald-400 transition-colors">Vision</a>
           <a href="#servizi" className="hover:text-emerald-400 transition-colors">Servizi</a>
+          <button 
+            onClick={() => setView('casestudies')}
+            className="hover:text-emerald-400 transition-colors uppercase tracking-widest"
+          >
+            Casi Studio
+          </button>
           <a href="#pmi" className="hover:text-emerald-400 transition-colors">PMI</a>
           <a href="#contatti-booking" className="px-5 py-2 bg-emerald-500 text-black rounded-full hover:bg-emerald-400 transition-colors">Contattaci</a>
         </div>
@@ -248,6 +271,15 @@ export default function App() {
                 >
                   Servizi
                 </a>
+                <button 
+                  onClick={() => {
+                    setView('casestudies');
+                    setIsMenuOpen(false);
+                  }}
+                  className="text-3xl font-bold hover:text-emerald-400 transition-colors text-left"
+                >
+                  Casi Studio
+                </button>
                 <a 
                   href="#pmi" 
                   onClick={() => setIsMenuOpen(false)}
@@ -286,20 +318,20 @@ export default function App() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-8"
           >
             <Zap className="w-3 h-3 fill-current" />
-            AI Automation & Software Development
+            Il tuo assistente invisibile
           </motion.div>
           <h1 className="text-4xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-8 leading-[0.9] text-gradient">
-            Soluzioni <span className="text-emerald-500">AI</span> semplici.
+            Riprenditi il tuo <span className="text-emerald-500">tempo</span>.
           </h1>
           <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl mb-12 leading-relaxed">
-            Benvenuti nel profilo ufficiale di h4sh, la realtà innovativa fondata da Lorenzo Fornara dedicata alla progettazione di soluzioni software intelligenti.
+            h4sh entra inosservato nel tuo studio per farti trovare il lavoro già fatto. Senza che tu debba imparare nulla di nuovo.
           </p>
           <div className="flex flex-col sm:flex-row gap-6">
             <button 
               onClick={() => setView('generator')}
               className="px-8 py-4 bg-emerald-500 text-black font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-emerald-400 transition-all group shadow-[0_0_20px_rgba(16,185,129,0.3)]"
             >
-              Configura il tuo Agente <Zap className="w-5 h-5 fill-current" />
+              Configura il tuo Protocollo <Zap className="w-5 h-5 fill-current" />
             </button>
             <a href="#contatti-booking" className="px-8 py-4 bg-white/5 border border-white/10 font-bold rounded-xl hover:bg-white/10 transition-all flex items-center justify-center gap-2">
               Inizia il Progetto <ArrowRight className="w-5 h-5" />
@@ -315,12 +347,12 @@ export default function App() {
             <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-6">
               <Eye className="w-6 h-6 text-emerald-400" />
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight text-gradient">Visione Democratica.</h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight text-gradient">L'Ordine Invisibile.</h2>
             <p className="text-xl text-zinc-400 leading-relaxed mb-8">
-              In h4sh, crediamo che l'Intelligenza Artificiale non debba essere un privilegio per pochi colossi tecnologici, ma uno strumento democratico e tangibile per ogni realtà imprenditoriale.
+              In h4sh non costruiamo tecnologia per la tecnologia. Costruiamo scatole nere invisibili che trasformano il caos in ordine perfetto.
             </p>
             <p className="text-lg text-zinc-500 leading-relaxed">
-              La nostra visione è un'Italia produttiva dove l'automazione non sostituisce l'uomo, ma lo libera dalle mansioni ripetitive, permettendogli di tornare a focalizzarsi sulla creatività e sulla strategia.
+              La nostra missione è liberare i professionisti dalla burocrazia manuale, restituendo loro tempo, tranquillità e la percezione di un lavoro d'élite. Entrerà h4sh, non entrerà il caos.
             </p>
           </div>
           <div className="reveal relative aspect-square rounded-3xl overflow-hidden border border-white/10 bg-zinc-900 group">
@@ -339,45 +371,45 @@ export default function App() {
       {/* Services Section */}
       <Section id="servizi">
         <div className="text-center mb-24 reveal">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Cosa Facciamo.</h2>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">I Protocolli h4sh.</h2>
           <p className="text-xl text-zinc-400 max-w-3xl mx-auto">
-            Nata nel 2024 a Bordighera, h4sh integra l'innovazione digitale direttamente nei flussi di lavoro attraverso tre pilastri fondamentali.
+            Soluzioni chiuse, pensate per risolvere problemi specifici senza che tu debba cambiare il tuo modo di lavorare.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="reveal">
             <Card 
               icon={Cpu}
-              title="Automazione AI"
-              description="Non ci limitiamo a fornire strumenti, ma riprogettiamo il modo in cui lavori."
+              title="Commercialista Autopilota"
+              description="Giornate intere perse a estrarre dati dalle fatture? h4sh le legge e le trascrive per te."
               items={[
-                "Agenti Autonomi Intelligenti",
-                "Workflow Optimization (LLM & Vision)",
-                "Analisi Predittiva Strategica"
+                "Recupero di 15 ore al mese",
+                "Zero errori di trascrizione",
+                "Integrazione con il tuo Excel"
               ]}
             />
           </div>
           <div className="reveal">
             <Card 
               icon={Code}
-              title="Sviluppo Software"
-              description="Costruiamo fondamenta digitali robuste, moderne e scalabili."
+              title="L'Archivio che Parla"
+              description="Trova clausole specifiche in contratti di anni fa in pochi secondi, non giorni."
               items={[
-                "Web Application ad alte prestazioni",
-                "Architetture Tailor-made",
-                "UI/UX focalizzata sull'efficienza"
+                "Risposte immediate ai clienti",
+                "Memoria storica infallibile",
+                "Ambiente blindato e sicuro"
               ]}
             />
           </div>
           <div className="reveal">
             <Card 
               icon={Server}
-              title="Infrastruttura"
-              description="Garantiamo che il tuo business digitale poggi su basi solide e sicure."
+              title="Visita Senza Carta"
+              description="Per medici e specialisti: referti compilati automaticamente dai tuoi appunti."
               items={[
-                "Progettazione Cloud Scalabile",
-                "Ottimizzazione Sicurezza",
-                "Manutenzione Evolutiva Costante"
+                "Zero cartelle portate a casa",
+                "Lettere formali già pronte",
+                "Focus totale sul paziente"
               ]}
             />
           </div>
@@ -388,21 +420,21 @@ export default function App() {
       <Section id="pmi" className="bg-zinc-950/50">
         <div className="max-w-4xl mx-auto text-center reveal">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-8">
-            🇮🇹 Al servizio delle PMI Italiane
+            🇮🇹 Al servizio dei professionisti italiani
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-12 tracking-tight">Portiamo la Silicon Valley nel tuo distretto.</h2>
+          <h2 className="text-4xl md:text-6xl font-bold mb-12 tracking-tight">Smetti di essere l'impiegato di te stesso.</h2>
           <div className="grid md:grid-cols-3 gap-12 text-left">
             <div>
-              <h4 className="text-emerald-400 font-bold mb-4 uppercase tracking-widest text-sm">Democratizzazione</h4>
-              <p className="text-zinc-400 text-sm leading-relaxed">Rendiamo accessibili tecnologie d'avanguardia senza la necessità di reparti IT mastodontici.</p>
+              <h4 className="text-emerald-400 font-bold mb-4 uppercase tracking-widest text-sm">Tranquillità</h4>
+              <p className="text-zinc-400 text-sm leading-relaxed">Eliminiamo l'ansia da errore manuale. h4sh ricontrolla tutto tre volte, con precisione chirurgica.</p>
             </div>
             <div>
-              <h4 className="text-emerald-400 font-bold mb-4 uppercase tracking-widest text-sm">Efficienza</h4>
-              <p className="text-zinc-400 text-sm leading-relaxed">Automatizziamo la gestione documentale riducendo drasticamente l'errore umano.</p>
+              <h4 className="text-emerald-400 font-bold mb-4 uppercase tracking-widest text-sm">Prestigio</h4>
+              <p className="text-zinc-400 text-sm leading-relaxed">I tuoi clienti riceveranno risposte in tempo reale. Penseranno che tu abbia assunto un team d'élite.</p>
             </div>
             <div>
-              <h4 className="text-emerald-400 font-bold mb-4 uppercase tracking-widest text-sm">Alfabetizzazione</h4>
-              <p className="text-zinc-400 text-sm leading-relaxed">Accompagniamo le PMI in un percorso di crescita, rendendo l'AI il miglior collaboratore.</p>
+              <h4 className="text-emerald-400 font-bold mb-4 uppercase tracking-widest text-sm">Semplicità</h4>
+              <p className="text-zinc-400 text-sm leading-relaxed">Non devi imparare nulla. Continua a usare la tua email e il tuo Excel. Al resto pensiamo noi.</p>
             </div>
           </div>
         </div>
@@ -412,15 +444,15 @@ export default function App() {
       <Section>
         <div className="grid lg:grid-cols-2 gap-24 items-center">
           <div className="reveal">
-            <h2 className="text-4xl md:text-6xl font-bold mb-12 tracking-tight">Perché scegliere h4sh?</h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-12 tracking-tight">Perché h4sh?</h2>
             <div className="space-y-12">
               <div className="flex gap-6">
                 <div className="shrink-0 w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center">
                   <Globe className="w-6 h-6 text-emerald-400" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Esperienza Locale, Visione Globale</h3>
-                  <p className="text-zinc-400">Da Bordighera serviamo l'intera Italia con standard tecnologici internazionali.</p>
+                  <h3 className="text-xl font-bold mb-2">Zero interruzioni</h3>
+                  <p className="text-zinc-400">Non ti vendiamo un programma da imparare, ma il risultato finale già pronto.</p>
                 </div>
               </div>
               <div className="flex gap-6">
@@ -428,8 +460,8 @@ export default function App() {
                   <TrendingUp className="w-6 h-6 text-emerald-400" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Focus sul Risultato</h3>
-                  <p className="text-zinc-400">Ogni riga di codice è scritta per generare un ritorno sull'investimento chiaro e misurabile.</p>
+                  <h3 className="text-xl font-bold mb-2">Focus sul Valore</h3>
+                  <p className="text-zinc-400">Torna a fare consulenza di alto livello. Alle scartoffie ci pensa il sistema h4sh.</p>
                 </div>
               </div>
               <div className="flex gap-6">
@@ -438,7 +470,7 @@ export default function App() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">Approccio Sartoriale</h3>
-                  <p className="text-zinc-400">Nessuna soluzione standard; ogni progetto è cucito sulle specifiche necessità del cliente.</p>
+                  <p className="text-zinc-400">Nessuna soluzione standard; ogni protocollo è cucito sulle tue specifiche necessità.</p>
                 </div>
               </div>
             </div>
@@ -447,7 +479,7 @@ export default function App() {
             <div className="mb-12">
               <Zap className="w-12 h-12 fill-black mb-6" />
               <blockquote className="text-3xl font-bold leading-tight">
-                "Il nostro obiettivo non è solo scrivere codice, ma creare sistemi che rendano il tempo il bene più prezioso dei nostri clienti."
+                "Il nostro obiettivo non è scrivere codice, ma creare sistemi che rendano il tempo il bene più prezioso dei nostri clienti."
               </blockquote>
             </div>
             <div className="flex items-center gap-4">
@@ -467,9 +499,9 @@ export default function App() {
           <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-8 mx-auto">
             <Zap className="w-8 h-8 text-emerald-400" />
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Ottieni il <span className="text-emerald-500">20% di sconto</span>.</h2>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Abbonati alla <span className="text-emerald-500">Tranquillità</span>.</h2>
           <p className="text-xl text-zinc-400 mb-12 leading-relaxed">
-            Unisciti alla nostra community e ricevi subito un codice sconto di benvenuto per la tua prima automazione o progetto software.
+            Unisciti alla nostra community di professionisti e scopri come eliminare per sempre il caos dal tuo studio.
           </p>
           
           <form onSubmit={handleSubscribe} className="relative max-w-lg mx-auto">
@@ -560,7 +592,7 @@ export default function App() {
               <span className="font-bold text-xl tracking-tighter uppercase">h4sh</span>
             </div>
             <p className="text-zinc-400 max-w-sm mb-8">
-              Trasformiamo la complessità tecnologica in semplicità operativa. Soluzioni software intelligenti e infrastrutture digitali scalabili.
+              Trasformiamo il caos in ordine invisibile. Soluzioni d'élite per professionisti che vogliono riprendersi il proprio tempo.
             </p>
             <div className="flex gap-4">
               <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-emerald-500 hover:text-black transition-all cursor-pointer">
@@ -576,6 +608,14 @@ export default function App() {
             <ul className="space-y-4 text-zinc-400 text-sm">
               <li>Bordighera, Italia</li>
               <li>h4shell@gmail.it</li>
+              <li>
+                <button 
+                  onClick={() => setView('casestudies')}
+                  className="hover:text-emerald-400 transition-colors"
+                >
+                  Casi Studio
+                </button>
+              </li>
             </ul>
           </div>
           <div>
