@@ -25,6 +25,7 @@ import { ContactSection } from './components/ContactSection';
 import { Logo } from './components/Logo';
 import { AIGenerator } from './components/AIGenerator';
 import { CaseStudies } from './components/CaseStudies';
+import { FAQSection } from './components/FAQSection';
 import { Chatbot } from './components/Chatbot';
 import { CustomCursor } from './components/CustomCursor';
 import { HeroVideoBackground } from './components/HeroVideoBackground';
@@ -147,8 +148,8 @@ export default function App() {
     <div ref={container} className="bg-black text-zinc-100 selection:bg-emerald-500 selection:text-black overflow-x-hidden">
       <Helmet>
         <title>h4sh | Il tuo studio, in perfetto ordine</title>
-        <meta name="description" content="h4sh è l'unico partner che non ti chiede di imparare un nuovo programma, ma che entra inosservato nel tuo studio per farti trovare il lavoro già fatto al posto tuo." />
-        <meta name="keywords" content="h4sh, Lorenzo Fornara, efficienza studio professionale, automazione documenti, tranquillità professionale" />
+        <meta name="description" content="h4sh si integra nel tuo flusso di lavoro esistente. Inizia a risparmiare tempo dal primo giorno, senza imparare nulla." />
+        <meta name="keywords" content="h4sh, Lorenzo Fornara, efficienza studio professionale, automazione documenti, tranquillità professionale, AI per avvocati, automazione per commercialisti, protocolli di ordine invisibile, ottimizzazione processi professionali" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
@@ -218,6 +219,7 @@ export default function App() {
           >
             Casi Studio
           </button>
+          <a href="#faq" className="hover:text-emerald-400 transition-colors">FAQ</a>
           <a href="#pmi" className="hover:text-emerald-400 transition-colors">PMI</a>
           <a href="#contatti-booking" className="px-5 py-2 bg-emerald-500 text-black rounded-full hover:bg-emerald-400 transition-colors">Contattaci</a>
         </div>
@@ -281,6 +283,13 @@ export default function App() {
                   Casi Studio
                 </button>
                 <a 
+                  href="#faq" 
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-3xl font-bold hover:text-emerald-400 transition-colors"
+                >
+                  FAQ
+                </a>
+                <a 
                   href="#pmi" 
                   onClick={() => setIsMenuOpen(false)}
                   className="text-3xl font-bold hover:text-emerald-400 transition-colors"
@@ -324,7 +333,7 @@ export default function App() {
             Riprenditi il tuo <span className="text-emerald-500">tempo</span>.
           </h1>
           <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl mb-12 leading-relaxed">
-            h4sh entra inosservato nel tuo studio per farti trovare il lavoro già fatto. Senza che tu debba imparare nulla di nuovo.
+            h4sh si integra nel tuo flusso di lavoro esistente. Inizia a risparmiare tempo dal primo giorno, senza imparare nulla.
           </p>
           <div className="flex flex-col sm:flex-row gap-6">
             <button 
@@ -347,9 +356,9 @@ export default function App() {
             <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-6">
               <Eye className="w-6 h-6 text-emerald-400" />
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight text-gradient">L'Ordine Invisibile.</h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight text-gradient">L'utomazione per Chi Non Vuole Complicazioni.</h2>
             <p className="text-xl text-zinc-400 leading-relaxed mb-8">
-              In h4sh non costruiamo tecnologia per la tecnologia. Costruiamo scatole nere invisibili che trasformano il caos in ordine perfetto.
+              Niente da installare, niente da imparare. Grazie alle nostre soluzioni ti occuperai solo della tua professione, lasciando a noi lo stress.
             </p>
             <p className="text-lg text-zinc-500 leading-relaxed">
               La nostra missione è liberare i professionisti dalla burocrazia manuale, restituendo loro tempo, tranquillità e la percezione di un lavoro d'élite. Entrerà h4sh, non entrerà il caos.
@@ -439,6 +448,8 @@ export default function App() {
           </div>
         </div>
       </Section>
+
+      <FAQSection />
 
       {/* Why Choose Us */}
       <Section>
@@ -615,6 +626,9 @@ export default function App() {
                 >
                   Casi Studio
                 </button>
+              </li>
+              <li>
+                <a href="#faq" className="hover:text-emerald-400 transition-colors">FAQ</a>
               </li>
             </ul>
           </div>
