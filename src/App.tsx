@@ -211,7 +211,7 @@ export default function App() {
         
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400 uppercase tracking-widest">
-          <a href="#vision" className="hover:text-emerald-400 transition-colors">Vision</a>
+          <a href="#vision" className="hover:text-emerald-400 transition-colors">Cosa Facciamo</a>
           <a href="#servizi" className="hover:text-emerald-400 transition-colors">Servizi</a>
           <button 
             onClick={() => setView('casestudies')}
@@ -220,7 +220,7 @@ export default function App() {
             Casi Studio
           </button>
           <a href="#faq" className="hover:text-emerald-400 transition-colors">FAQ</a>
-          <a href="#pmi" className="hover:text-emerald-400 transition-colors">PMI</a>
+          <a href="#pmi" className="hover:text-emerald-400 transition-colors">Settori</a>
           <a href="#contatti-booking" className="px-5 py-2 bg-emerald-500 text-black rounded-full hover:bg-emerald-400 transition-colors">Contattaci</a>
         </div>
 
