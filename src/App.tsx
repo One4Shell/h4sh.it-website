@@ -346,10 +346,10 @@ export default function App() {
             Il tuo assistente invisibile
           </motion.div>
           <h1 className="text-4xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-8 leading-[0.9] text-gradient">
-            Riprenditi il tuo <span className="text-emerald-500">tempo</span>.
+            Recupera <span className="text-emerald-500">15 ore</span> al mese.
           </h1>
           <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl mb-12 leading-relaxed">
-            h4sh si integra nel tuo flusso di lavoro esistente. Inizia a risparmiare tempo dal primo giorno, senza imparare nulla.
+            Automatizziamo il lavoro noioso del tuo studio. Tu continui a lavorare come sempre, al resto pensa il tuo assistente invisibile.
           </p>
           <div className="flex flex-col sm:flex-row gap-6">
             <button 
@@ -372,12 +372,12 @@ export default function App() {
             <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-6">
               <Eye className="w-6 h-6 text-emerald-400" />
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight text-gradient">L'automazione per il tuo business.</h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight text-gradient">Vendiamo tempo recuperato, non software.</h2>
             <p className="text-xl text-zinc-400 leading-relaxed mb-8">
-              Niente da installare, niente da imparare. Grazie alle nostre soluzioni ti occuperai solo della tua professione, lasciando a noi lo stress.
+              Facciamo in modo che il lavoro ripetitivo venga fatto da un sistema automatico invece che da te. Niente da installare, niente da imparare.
             </p>
             <p className="text-lg text-zinc-500 leading-relaxed">
-              La nostra missione è liberare i professionisti dalla burocrazia manuale, restituendo loro tempo, tranquillità e la percezione di un lavoro d'élite. Entrerà h4sh, non entrerà il caos.
+              La nostra missione è eliminare la burocrazia manuale dal tuo studio. Ti restituiamo ore preziose che oggi perdi a inserire dati, cercare documenti o smistare email.
             </p>
           </div>
           <div className="reveal relative aspect-square rounded-3xl overflow-hidden border border-white/10 bg-zinc-900 group">
@@ -396,45 +396,45 @@ export default function App() {
       {/* Services Section */}
       <Section id="servizi">
         <div className="text-center mb-24 reveal">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">I Protocolli h4sh.</h2>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Cosa facciamo per te.</h2>
           <p className="text-xl text-zinc-400 max-w-3xl mx-auto">
-            Soluzioni chiuse, pensate per risolvere problemi specifici senza che tu debba cambiare il tuo modo di lavorare.
+            Sistemi automatici pronti all'uso, progettati per risolvere i problemi che ti rubano più tempo ogni giorno.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           <div className="reveal">
             <Card 
               icon={Cpu}
-              title="Commercialista Autopilota"
-              description="Giornate intere perse a estrarre dati dalle fatture? h4sh le legge e le trascrive per te."
+              title="Fatture in Autopilota"
+              description="Il sistema legge i PDF delle fatture e scrive i dati direttamente nel tuo Excel o gestionale."
               items={[
-                "Recupero di 15 ore al mese",
-                "Zero errori di trascrizione",
-                "Integrazione con il tuo Excel"
+                "Recupero di 15-20 ore al mese",
+                "Zero errori di battitura",
+                "Funziona con i tuoi file attuali"
               ]}
             />
           </div>
           <div className="reveal">
             <Card 
               icon={Code}
-              title="L'Archivio che Parla"
-              description="Trova clausole specifiche in contratti di anni fa in pochi secondi, non giorni."
+              title="Archivio Intelligente"
+              description="Trova clausole specifiche o documenti di anni fa in 3 secondi, senza dover sfogliare centinaia di cartelle."
               items={[
                 "Risposte immediate ai clienti",
-                "Memoria storica infallibile",
-                "Ambiente blindato e sicuro"
+                "Tutto l'archivio è cercabile",
+                "Massima sicurezza e privacy"
               ]}
             />
           </div>
           <div className="reveal">
             <Card 
               icon={Server}
-              title="Visita Senza Carta"
-              description="Per medici e specialisti: referti compilati automaticamente dai tuoi appunti."
+              title="Referti Automatici"
+              description="Per medici e specialisti: il sistema compila i referti partendo dai tuoi appunti vocali o brevi note."
               items={[
-                "Zero cartelle portate a casa",
-                "Lettere formali già pronte",
-                "Focus totale sul paziente"
+                "Mai più referti portati a casa",
+                "Lettere ai colleghi già pronte",
+                "Più tempo per il paziente"
               ]}
             />
           </div>
@@ -447,19 +447,19 @@ export default function App() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-8">
             🇮🇹 Al servizio dei professionisti italiani
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-12 tracking-tight">Smetti di essere l'impiegato di te stesso.</h2>
+          <h2 className="text-4xl md:text-6xl font-bold mb-12 tracking-tight">Basta lavoro da impiegato. Torna a fare il professionista.</h2>
           <div className="grid md:grid-cols-3 gap-12 text-left">
             <div>
-              <h4 className="text-emerald-400 font-bold mb-4 uppercase tracking-widest text-sm">Tranquillità</h4>
-              <p className="text-zinc-400 text-sm leading-relaxed">Eliminiamo l'ansia da errore manuale. h4sh ricontrolla tutto tre volte, con precisione chirurgica.</p>
+              <h4 className="text-emerald-400 font-bold mb-4 uppercase tracking-widest text-sm">Precisione</h4>
+              <p className="text-zinc-400 text-sm leading-relaxed">Eliminiamo l'errore umano. Il sistema controlla i dati con precisione chirurgica, 24 ore su 24.</p>
             </div>
             <div>
-              <h4 className="text-emerald-400 font-bold mb-4 uppercase tracking-widest text-sm">Prestigio</h4>
-              <p className="text-zinc-400 text-sm leading-relaxed">I tuoi clienti riceveranno risposte in tempo reale. Penseranno che tu abbia assunto un team d'élite.</p>
+              <h4 className="text-emerald-400 font-bold mb-4 uppercase tracking-widest text-sm">Velocità</h4>
+              <p className="text-zinc-400 text-sm leading-relaxed">I tuoi clienti ricevono risposte e documenti in tempo reale. L'efficienza del tuo studio raddoppia.</p>
             </div>
             <div>
-              <h4 className="text-emerald-400 font-bold mb-4 uppercase tracking-widest text-sm">Semplicità</h4>
-              <p className="text-zinc-400 text-sm leading-relaxed">Non devi imparare nulla. Continua a usare la tua email e il tuo Excel. Al resto pensiamo noi.</p>
+              <h4 className="text-emerald-400 font-bold mb-4 uppercase tracking-widest text-sm">Concretezza</h4>
+              <p className="text-zinc-400 text-sm leading-relaxed">Non devi imparare nuovi software. Continua a usare i tuoi strumenti, al resto pensiamo noi.</p>
             </div>
           </div>
         </div>
@@ -526,9 +526,9 @@ export default function App() {
           <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-8 mx-auto">
             <Zap className="w-8 h-8 text-emerald-400" />
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Abbonati alla <span className="text-emerald-500">Tranquillità</span>.</h2>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Ricevi consigli pratici.</h2>
           <p className="text-xl text-zinc-400 mb-12 leading-relaxed">
-            Unisciti alla nostra community di professionisti e scopri come eliminare per sempre il caos dal tuo studio.
+            Unisciti alla nostra community e scopri come eliminare il lavoro manuale dal tuo studio con soluzioni concrete.
           </p>
           
           <form onSubmit={handleSubscribe} className="relative max-w-lg mx-auto">

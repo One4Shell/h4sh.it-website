@@ -16,44 +16,32 @@ interface CaseStudy {
 const caseStudies: CaseStudy[] = [
   {
     id: 'architetto',
-    title: "Da 1,5 ore al giorno a Zero. Come un Agente AI ha rivoluzionato il flusso di uno Studio di Architettura",
+    title: "Recupero di 10 ore a settimana per uno studio di architettura.",
     client: "Marco T. - Studio di Architettura",
-    sector: "Design e Progettazione Architettonica",
-    problem: "Gestione manuale e ripetitiva degli allegati via email",
-    solution: "Implementazione di un Agente AI Autonomo per l'archiviazione",
-    keyResult: "Recupero di 10 ore settimanali e zero errori umani",
+    sector: "Architettura e Progettazione",
+    problem: "Marco perdeva 90 minuti ogni mattina a smistare email e salvare allegati nelle cartelle giuste.",
+    solution: "Sistema automatico che riconosce i progetti e archivia i file al posto dell'architetto.",
+    keyResult: "Tempo di archiviazione azzerato. Marco ora inizia a progettare subito.",
     content: (
       <div className="space-y-8">
         <section>
-          <h3 className="text-2xl font-bold mb-4 text-emerald-400">Il Profilo del Cliente</h3>
+          <h3 className="text-2xl font-bold mb-4 text-emerald-400">Il Problema</h3>
           <p className="text-zinc-400 leading-relaxed">
-            <strong>Marco T.</strong>, titolare di uno studio di architettura di fascia medio-alta specializzato in residenze di lusso e riqualificazione commerciale. 
-            Il suo tempo è il bene più prezioso del suo studio: le sue competenze tecniche e la sua visione creativa sono ciò per cui i clienti lo pagano.
+            Marco è un architetto pagato per la sua creatività, ma passava <strong>90 minuti ogni mattina</strong> a fare il lavoro di un impiegato: scaricare file, rinominarli e spostarli su Dropbox. Questa micro-frizione gli rubava energia mentale e tempo prezioso.
           </p>
         </section>
 
         <section>
-          <h3 className="text-2xl font-bold mb-4 text-emerald-400">La Situazione Iniziale: L'Inferno della Burocrazia Mattutina</h3>
-          <p className="text-zinc-400 leading-relaxed mb-4">
-            Per Marco, ogni giorno iniziava allo stesso modo. Con una tazza di caffè e un senso di pesantezza. 
-            La sua casella di posta era letteralmente inondata da email dei clienti, dei fornitori e delle maestranze. C'era un problema ricorrente: <strong>i file non arrivavano mai nel formato o nel posto giusto.</strong>
-          </p>
-          <div className="bg-white/5 border border-white/10 p-6 rounded-2xl italic text-zinc-300">
-            "Marco, un professionista pagato per progettare spazi, stava dedicando 1,5 ore ogni mattina a fare il lavoro di un impiegato d'ufficio addetto allo scambio file. Questa micro-frizione quotidiana gli rubava energia mentale e, in alcuni casi, portava a errori di salvataggio."
-          </div>
-        </section>
-
-        <section>
-          <h3 className="text-2xl font-bold mb-4 text-emerald-400">La Risoluzione: Ingegneria del Flusso</h3>
+          <h3 className="text-2xl font-bold mb-4 text-emerald-400">La Soluzione h4sh</h3>
           <p className="text-zinc-400 leading-relaxed mb-6">
-            Abbiamo introdotto e configurato un <strong>Agente AI Autonomo</strong> dedicato, creando un ponte invisibile tra la casella di posta e Dropbox.
+            Abbiamo creato un sistema invisibile che monitora la sua email e gestisce i file in autonomia.
           </p>
           <ul className="grid md:grid-cols-2 gap-4">
             {[
-              "Comprensione Semantica: Riconosce mittenti e contesti",
-              "Classificazione Automatica: Analizza la natura dei file",
-              "Archiviazione Intelligente: Applica nomenclature standard",
-              "Feedback Immediato: Invia conferme automatiche ai clienti"
+              "Riconoscimento automatico del progetto",
+              "Salvataggio immediato su Dropbox",
+              "Nomenclatura file standardizzata",
+              "Conferma automatica di ricezione al cliente"
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 p-4 bg-emerald-500/5 border border-emerald-500/10 rounded-xl">
                 <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
@@ -67,41 +55,31 @@ const caseStudies: CaseStudy[] = [
   },
   {
     id: 'avvocato',
-    title: "Come abbiamo liberato un Avvocato dalla prigione del copia-incolla",
+    title: "12 ore recuperate ogni settimana eliminando il copia-incolla.",
     client: "Avv. Laura B.",
-    sector: "Legale - Diritto del Lavoro e Contenzioso",
-    problem: "Inserimento manuale dei dati dei fascicoli da email e PDF",
-    solution: "Assistente AI per l'elaborazione automatica dei documenti",
-    keyResult: "Recupero di 12 ore settimanali e zero errori di trascrizione",
+    sector: "Legale",
+    problem: "L'avvocato Laura passava i pomeriggi a trascrivere dati dai PDF delle pratiche in un foglio Excel.",
+    solution: "Sistema di lettura automatica che estrae i dati dai documenti e popola il database.",
+    keyResult: "Inserimento dati automatico. Laura ha smesso di fare l'impiegata e ha ripreso a fare l'avvocato.",
     content: (
       <div className="space-y-8">
         <section>
-          <h3 className="text-2xl font-bold mb-4 text-emerald-400">Il Profilo del Cliente</h3>
+          <h3 className="text-2xl font-bold mb-4 text-emerald-400">Il Problema</h3>
           <p className="text-zinc-400 leading-relaxed">
-            L'Avv. Laura B. è un punto di riferimento solido nel Diritto del Lavoro. I suoi clienti scelgono lei per il suo acume strategico, non certo per le sue abilità di data entry.
+            Laura è un'esperta di diritto del lavoro, ma la sua routine era bloccata dal <strong>data entry manuale</strong>. Ogni pomeriggio doveva aprire decine di PDF, leggere date e importi, e scriverli a mano in un file Excel per tracciare i fascicoli.
           </p>
         </section>
 
         <section>
-          <h3 className="text-2xl font-bold mb-4 text-emerald-400">La Situazione Iniziale</h3>
-          <p className="text-zinc-400 leading-relaxed mb-4">
-            Ogni pomeriggio Laura si trovava invischiata in una routine che sottraeva spazio alla vera consulenza legale: scaricare PDF, leggere date e importi, e trascriverli in un foglio Excel.
-          </p>
-          <div className="bg-white/5 border border-white/10 p-6 rounded-2xl italic text-zinc-300">
-            "Una professionista pagata per difendere le persone con la propria intelligenza, che passava il suo tempo a comportarsi come una stampante umana."
-          </div>
-        </section>
-
-        <section>
-          <h3 className="text-2xl font-bold mb-4 text-emerald-400">La Risoluzione</h3>
+          <h3 className="text-2xl font-bold mb-4 text-emerald-400">La Soluzione h4sh</h3>
           <p className="text-zinc-400 leading-relaxed mb-6">
-            Abbiamo introdotto un Assistente AI integrato con Google Sheets che legge le email, analizza i PDF e popola automaticamente il database.
+            Abbiamo implementato un sistema che \"legge\" i documenti come un occhio umano e inserisce i dati al posto suo.
           </p>
           <div className="grid gap-4">
             {[
-              { t: "Analisi PDF", d: "Legge il PDF come un occhio umano ed estrae i dati chiave." },
-              { t: "Popolamento Database", d: "Inserisce perfettamente i dati nelle colonne predisposte." },
-              { t: "Rassicurazione Cliente", d: "Invia conferme istantanee di presa in carico." }
+              { t: "Lettura PDF", d: "Il sistema estrae automaticamente date, importi e nomi dai documenti." },
+              { t: "Scrittura Automatica", d: "I dati vengono inseriti perfettamente nelle colonne dell'Excel." },
+              { t: "Zero Errori", d: "Eliminata ogni possibilità di refuso o errore di battitura." }
             ].map((item, i) => (
               <div key={i} className="p-4 bg-emerald-500/5 border border-emerald-500/10 rounded-xl">
                 <h4 className="font-bold text-emerald-400 mb-1">{item.t}</h4>
@@ -115,42 +93,32 @@ const caseStudies: CaseStudy[] = [
   },
   {
     id: 'commercialista',
-    title: "Come abbiamo liberato un Commercialista dalla prigione delle circolari fiscali",
+    title: "Proattività aumentata del 400% per uno studio commerciale.",
     client: "Dott.ssa Valeria C.",
-    sector: "Consulenza fiscale e aziendale",
-    problem: "Ore di studio non fatturabili per analizzare le circolari dell'AdE",
-    solution: "Sistema h4sh per il confronto automatico normativa/clienti",
-    keyResult: "Proattività verso i clienti aumentata del 400%",
+    sector: "Consulenza Fiscale",
+    problem: "Valeria passava i weekend a leggere circolari fiscali per capire quali clienti potessero beneficiare di nuove agevolazioni.",
+    solution: "Sistema che analizza le normative e segnala automaticamente i clienti idonei.",
+    keyResult: "Il sistema segnala subito le opportunità. Valeria ora vende consulenza extra ogni lunedì.",
     content: (
       <div className="space-y-8">
         <section>
-          <h3 className="text-2xl font-bold mb-4 text-emerald-400">Il Profilo del Cliente</h3>
+          <h3 className="text-2xl font-bold mb-4 text-emerald-400">Il Problema</h3>
           <p className="text-zinc-400 leading-relaxed">
-            La Dott.ssa Valeria C. è specializzata in Agevolazioni e Crediti d'Impresa. Il suo valore è la mente strategica, non il tempo passato a leggere centinaia di pagine di circolari.
+            Valeria doveva incrociare manualmente i requisiti delle nuove circolari dell'Agenzia delle Entrate con l'elenco dei suoi clienti. Un lavoro estenuante che rubava tempo alla vita privata e portava a <strong>perdere opportunità di consulenza</strong>.
           </p>
         </section>
 
         <section>
-          <h3 className="text-2xl font-bold mb-4 text-emerald-400">La Situazione Iniziale</h3>
-          <p className="text-zinc-400 leading-relaxed mb-4">
-            Ogni weekend Valeria doveva incrociare i parametri aziendali con i requisiti normativi, uno per uno. Un processo estenuante che rubava tempo alla vita privata.
-          </p>
-          <div className="bg-white/5 border border-white/10 p-6 rounded-2xl italic text-zinc-300">
-            "La professionista che avrebbe dovuto far trovare soldi alle aziende trascorreva il suo tempo libero a cercare aghi in un pagliaio normativo."
-          </div>
-        </section>
-
-        <section>
-          <h3 className="text-2xl font-bold mb-4 text-emerald-400">La Risoluzione</h3>
+          <h3 className="text-2xl font-bold mb-4 text-emerald-400">La Soluzione h4sh</h3>
           <p className="text-zinc-400 leading-relaxed mb-6">
-            Un sistema h4sh che "legge" le nuove normative e le confronta con l'anagrafica attività dello studio, segnalando solo i clienti idonei.
+            Un sistema che analizza le nuove leggi e le confronta in silenzio con l'anagrafica dei clienti dello studio.
           </p>
           <div className="grid md:grid-cols-2 gap-4">
             {[
-              "Acquisizione automatica circolari",
-              "Comprensione requisiti agevolazioni",
-              "Incrocio silenzioso con anagrafica",
-              "Segnalazione proattiva opportunità"
+              "Analisi automatica nuove circolari",
+              "Incrocio dati con anagrafica clienti",
+              "Segnalazione immediata dei clienti idonei",
+              "Bozza di comunicazione già pronta"
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 p-4 bg-emerald-500/5 border border-emerald-500/10 rounded-xl list-none">
                 <TrendingUp className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />

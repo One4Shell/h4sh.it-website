@@ -52,27 +52,27 @@ export const FAQSection = () => {
   const faqs = [
     {
       question: "Cos'è h4sh e come aiuta il mio studio professionale?",
-      answer: "h4sh è un partner tecnologico d'élite specializzato nell'implementazione di 'Protocolli di Ordine Invisibile'. A differenza delle comuni agenzie di AI, non ti vendiamo un software da imparare, ma un risultato: automatizziamo i tuoi flussi di lavoro burocratici (gestione email, archiviazione, data entry) in modo che tu possa trovare il lavoro già fatto senza cambiare le tue abitudini."
+      answer: "h4sh crea sistemi automatici personalizzati per studi professionali. In pratica, facciamo in modo che il lavoro noioso e ripetitivo (come inserire fatture, cercare documenti o smistare email) venga fatto da un sistema informatico invece che da te o dai tuoi collaboratori. Non vendiamo software, vendiamo tempo recuperato."
     },
     {
       question: "Devo imparare a usare nuovi programmi o piattaforme?",
-      answer: "Assolutamente no. La filosofia di h4sh è l'integrazione invisibile. I nostri sistemi lavorano dietro le quinte interfacciandosi con gli strumenti che già utilizzi quotidianamente, come la tua Email, Excel, Dropbox o Google Drive. Tu continui a lavorare come hai sempre fatto, ma con la tranquillità di un assistente instancabile che gestisce la parte meccanica."
+      answer: "Assolutamente no. Il sistema lavora in background collegandosi agli strumenti che già usi: Email, Excel, Google Drive o il tuo gestionale. Tu continui a lavorare come sempre, ma trovi il lavoro già fatto."
     },
     {
       question: "I miei dati e quelli dei miei clienti sono al sicuro?",
-      answer: "La sicurezza è il nostro pilastro fondamentale. Utilizziamo esclusivamente ambienti crittografati e blindati. I dati processati dai Protocolli h4sh non vengono mai utilizzati per addestrare modelli pubblici e rimangono di tua esclusiva proprietà all'interno del tuo perimetro digitale. Rispettiamo i più alti standard di privacy per garantire la massima tutela del segreto professionale."
+      answer: "La sicurezza è fondamentale. Usiamo standard bancari e crittografia AES-256. I tuoi dati rimangono di tua esclusiva proprietà e non vengono mai usati per addestrare modelli pubblici. Tutto avviene in ambienti blindati e conformi al GDPR."
     },
     {
       question: "Quali sono i vantaggi concreti in termini di tempo e costi?",
-      answer: "I professionisti che adottano h4sh recuperano mediamente tra le 10 e le 20 ore al mese di tempo non fatturabile. Questo si traduce in un risparmio economico diretto e, soprattutto, in un aumento della qualità della vita e della proattività verso i clienti. Eliminiamo l'errore umano e aumentiamo il prestigio del tuo studio grazie a risposte e conferme immediate."
+      answer: "I nostri clienti recuperano mediamente tra le 15 e le 25 ore al mese. Questo significa eliminare gli straordinari, ridurre gli errori manuali e avere più tempo per i clienti o per la propria vita privata. Il sistema costa meno di un dipendente part-time e lavora 24 ore su 24."
     },
     {
-      question: "Quanto tempo richiede l'attivazione di un Protocollo?",
-      answer: "Il processo è rapido e non invasivo. Dopo una call conoscitiva di 15 minuti per analizzare le tue necessità, l'implementazione e l'attivazione di un Protocollo h4sh personalizzato richiedono solitamente dai 7 ai 14 giorni lavorativi. Una volta attivo, il sistema inizia a lavorare immediatamente in autonomia."
+      question: "Quanto tempo richiede l'attivazione di un sistema?",
+      answer: "Il processo è rapido. Dopo una call conoscitiva di 15 minuti, l'implementazione del tuo sistema personalizzato richiede solitamente dai 7 ai 14 giorni. Una volta attivo, il sistema inizia a lavorare immediatamente."
     },
     {
       question: "h4sh sostituisce il personale del mio studio?",
-      answer: "No, h4sh potenzia il tuo team. Liberando i tuoi collaboratori dai compiti ripetitivi, meccanici e a basso valore aggiunto, permetti loro di concentrarsi su attività che richiedono sensibilità umana, strategia e consulenza di alto livello. h4sh elimina la 'schiavitù delle scartoffie' per tutti i membri dello studio."
+      answer: "No, h4sh potenzia il tuo team. Liberando i collaboratori dai compiti meccanici e ripetitivi, permetti loro di concentrarsi su attività più importanti che richiedono sensibilità umana e strategia. Eliminiamo lo stress delle scartoffie per tutti."
     }
   ];
 
