@@ -137,7 +137,7 @@ export default function App() {
         <title>
           {view === 'generator' ? 'Generatore di Protocolli AI | h4sh' : 
            view === 'casestudies' ? 'Casi Studio e Risultati | h4sh' : 
-           'h4sh | Il tuo studio, in perfetto ordine'}
+           'h4sh | Automatizziamo il lavoro noioso del tuo studio.'}
         </title>
         <meta name="description" content="h4sh si integra nel tuo flusso di lavoro esistente. Inizia a risparmiare tempo dal primo giorno, senza imparare nulla. Automazione AI per studi professionali." />
         <meta name="keywords" content="h4sh, Lorenzo Fornara, efficienza studio professionale, automazione documenti, tranquillità professionale, AI per avvocati, automazione per commercialisti, protocolli di ordine invisibile, ottimizzazione processi professionali, intelligenza artificiale studi legali, risparmio tempo professionisti" />
