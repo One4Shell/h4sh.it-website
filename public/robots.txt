@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://h4sh.it/sitemap.xml
+Sitemap: https://www.h4sh.it/sitemap.xml
