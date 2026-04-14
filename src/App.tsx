@@ -237,6 +237,7 @@ export default function App() {
             Casi Studio
           </button>
           <a href="#faq" className="hover:text-emerald-400 transition-colors">FAQ</a>
+          <a href="https://news.h4sh.it" className="hover:text-emerald-400 transition-colors">World News</a>
           <a href="#contatti-booking" className="px-5 py-2 bg-emerald-500 text-black rounded-full hover:bg-emerald-400 transition-colors">Contattaci</a>
         </div>
 
